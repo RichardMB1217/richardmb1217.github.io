@@ -29,6 +29,7 @@
             if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
               const img = document.createElement("img");
               img.src = file.download_url;
+              img.height = 80%;
               document.getElementById("images").appendChild(img);
             }
           });
