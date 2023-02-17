@@ -4,7 +4,8 @@
     <title>A</title>
     <style>
       img {
-        align: center;
+        display: block;
+        margin: 0 auto;
         margin-bottom: 27px;
         max-height: 80%;
       }
@@ -22,15 +23,22 @@
       fetch(url)
         .then(response => response.json())
         .then(data => {
-          data.forEach(file => {
-            if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
-              const img = document.createElement("img");
-              img.src = file.download_url;
-              img.loading = "lazy";
-              document.getElementById("images").appendChild(img);
-            }
+          const imageFiles = data.filter(file => file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/));
+          shuffleArray(imageFiles);
+          imageFiles.forEach(file => {
+            const img = document.createElement("img");
+            img.src = file.download_url;
+            img.loading = "lazy";
+            document.getElementById("images").appendChild(img);
           });
         });
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
     </script>
   </body>
 </html>
