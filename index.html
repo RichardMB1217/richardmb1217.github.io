@@ -5,10 +5,9 @@
     <style>
       img {
         display: block;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 70px;
-        height: 80%;
+        margin: 0 auto;
+        margin-bottom: 27px;
+        max-height: 80%;
       }
     </style>
   </head>
@@ -16,7 +15,6 @@
     <div id="images"></div>
 
     <script>
-      // Replace the values below with your Github repository information
       const username = "RichardMB1217";
       const repository = "a";
       const path = "/";
@@ -29,7 +27,7 @@
             if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
               const img = document.createElement("img");
               img.src = file.download_url;
-              img.height = 80%
+              img.loading = "lazy";
               document.getElementById("images").appendChild(img);
             }
           });
