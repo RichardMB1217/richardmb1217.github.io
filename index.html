@@ -8,16 +8,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-image: url('https://cdn.pixabay.com/photo/2016/12/26/17/28/cat-1932451_960_720.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 30px;
+        margin-top: 50px;
+      }
+      h1 {
+        font-size: 60px;
+        text-align: center;
+        color: #333;
+        text-shadow: 2px 2px 4px #bbb;
+        margin-bottom: 50px;
+      }
+      .btn {
+        font-size: 24px;
+        margin: 10px;
+        padding: 20px 40px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container mt-4">
-      <h1>Welcome to the Cat Hub!</h1>
-      <p>Explore the world of cats through our various pages:</p>
-      <ul>
-        <li><a href="breeds.html">Cat Breeds</a></li>
-        <li><a href="facts.html">Cat Facts</a></li>
-        <li><a href="pictures.html">Cat Pictures</a></li>
-      </ul>
+    <div class="container">
+      <h1>Cat Hub</h1>
+      <div class="row justify-content-center">
+        <div class="col-sm-8 col-md-6 col-lg-4">
+          <a href="breeds.html" class="btn btn-primary btn-lg btn-block">Cat Breeds</a>
+        </div>
+        <div class="col-sm-8 col-md-6 col-lg-4">
+          <a href="facts.html" class="btn btn-secondary btn-lg btn-block">Cat Facts</a>
+        </div>
+        <div class="col-sm-8 col-md-6 col-lg-4">
+          <a href="pictures.html" class="btn btn-info btn-lg btn-block">Cat Pictures</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
