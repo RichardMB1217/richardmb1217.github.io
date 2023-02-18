@@ -1,47 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>A</title>
-    <style>
-      img {
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 27px;
-        max-height: 90vh;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
+    <title>Cat Hub Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div id="images"></div>
-
-    <script>
-      const username = "RichardMB1217";
-      const repository = "a";
-      const path = "/";
-
-      const url = `https://api.github.com/repos/${username}/${repository}/contents/${path}`;
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          const imageFiles = data.filter(file => file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/));
-          shuffleArray(imageFiles);
-          imageFiles.forEach(file => {
-            const img = document.createElement("img");
-            img.src = file.download_url;
-            img.loading = "lazy";
-            document.getElementById("images").appendChild(img);
-          });
-        });
-
-      function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-        }
-      }
-    </script>
+    <div class="container mt-4">
+      <h1>Welcome to the Cat Hub!</h1>
+      <p>Explore the world of cats through our various pages:</p>
+      <ul>
+        <li><a href="breeds.html">Cat Breeds</a></li>
+        <li><a href="facts.html">Cat Facts</a></li>
+        <li><a href="pictures.html">Cat Pictures</a></li>
+      </ul>
+    </div>
   </body>
 </html>
